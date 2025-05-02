@@ -3,7 +3,7 @@
     <div class="mb-8">
       <.link
         navigate={~p"/blog"}
-        class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 flex items-center gap-1 mb-6"
+        class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-300 flex items-center gap-1 mb-6"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,7 @@
         <span class="text-sm text-gray-600 dark:text-gray-400">Tagged as </span>
         <div class="flex flex-wrap gap-2 mt-1">
           <%= for tag <- @post.tags do %>
-            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-zinc-100 text-zinc-800 dark:bg-zinc-700 dark:text-zinc-200">
               #{tag}
             </span>
           <% end %>
@@ -44,7 +44,7 @@
       </div>
     </div>
 
-    <div class="prose dark:prose-invert prose-lg prose-indigo max-w-none prose-img:rounded-lg prose-headings:font-semibold prose-a:text-indigo-600 dark:prose-a:text-indigo-400 prose-blockquote:border-l-indigo-500">
+    <div class="prose dark:prose-invert prose-lg max-w-none prose-img:rounded-lg prose-headings:font-semibold prose-a:text-zinc-600 dark:prose-a:text-zinc-400 hover:prose-a:text-zinc-800 dark:hover:prose-a:text-zinc-300 prose-blockquote:border-l-zinc-500">
       {raw(@post.body)}
     </div>
   </article>
