@@ -1,13 +1,51 @@
-<.link href={~p"/blog"}>← All posts</.link>
+<div class="bg-white dark:bg-gray-900">
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="mb-8">
+      <.link
+        href={~p"/blog"}
+        class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 flex items-center gap-1 mb-6"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+        <span>All posts</span>
+      </.link>
 
-<h1>{@post.title}</h1>
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-gray-100 tracking-tight mb-4">
+        {@post.title}
+      </h1>
 
-<p>
-  <time>{@post.date}</time> by {@post.author}
-</p>
+      <div class="flex items-center text-gray-600 dark:text-gray-400 text-sm mb-6">
+        <time class="mr-3">{@post.date}</time>
+        <span class="mx-1">•</span>
+        <span class="ml-3">by {@post.author}</span>
+      </div>
 
-<p>
-  Tagged as {Enum.join(@post.tags, ", ")}
-</p>
+      <div class="mb-8">
+        <span class="text-sm text-gray-600 dark:text-gray-400">Tagged as </span>
+        <div class="flex flex-wrap gap-2 mt-1">
+          <%= for tag <- @post.tags do %>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">
+              #{tag}
+            </span>
+          <% end %>
+        </div>
+      </div>
+    </div>
 
-{raw(@post.body)}
+    <div class="prose dark:prose-invert prose-lg prose-indigo max-w-none prose-img:rounded-lg prose-headings:font-semibold prose-a:text-indigo-600 dark:prose-a:text-indigo-400 prose-blockquote:border-l-indigo-500">
+      {raw(@post.body)}
+    </div>
+  </article>
+</div>
