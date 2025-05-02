@@ -1,29 +1,128 @@
-<header class="px-4 sm:px-6 lg:px-8">
-  <div class="flex items-center justify-between border-b border-zinc-100 py-3 text-sm">
-    <div class="flex items-center gap-4">
-      <a href="/">
-        <img src={~p"/images/logo.svg"} width="36" />
-      </a>
-      <p class="bg-brand/5 text-brand rounded-full px-2 font-medium leading-6">
-        v{Application.spec(:phoenix, :vsn)}
-      </p>
+<div class="flex flex-row justify-between items-center">
+  <header class="flex flex-col sm:flex-row items-center gap-5 sm:gap-10 pt-16 py-12">
+    <div class="flex flex-col gap-5">
+      <h1 class="font-extrabold text-4xl">Hello, I'm Estevan Jantsk</h1>
+
+      <nav>
+        <ul class="flex sm:flex-row items-center gap-5">
+          <li>
+            <a href="https://eltonminetto.dev/talks/" class="">
+              Talks
+            </a>
+          </li>
+
+          <li>
+            <a href="https://eltonminetto.dev/about/" class="">
+              About
+            </a>
+          </li>
+
+          <li>
+            <a href="/" class=" active ">
+              Português
+            </a>
+          </li>
+
+          <li>
+            <a href="/index.xml" class="">
+              rss
+            </a>
+          </li>
+
+          <li class="-mt-2 block lg:hidden">
+            <button
+              id="mobile-theme-toggle"
+              class="toggle-theme"
+              aria-label="Toggle Theme"
+              title="Toggle Theme"
+              phx-hook="ThemeToggle"
+            >
+              <span class="theme-icon light hidden dark:block">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+                  >
+                  </path>
+                </svg>
+              </span>
+              <span class="theme-icon dark block dark:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+                  >
+                  </path>
+                </svg>
+              </span>
+            </button>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <div class="flex items-center gap-4 font-semibold leading-6 text-zinc-900">
-      <a href="https://twitter.com/elixirphoenix" class="hover:text-zinc-700">
-        @elixirphoenix
-      </a>
-      <a href="https://github.com/phoenixframework/phoenix" class="hover:text-zinc-700">
-        GitHub
-      </a>
-      <a
-        href="https://hexdocs.pm/phoenix/overview.html"
-        class="rounded-lg bg-zinc-100 px-2 py-1 hover:bg-zinc-200/80"
-      >
-        Get Started <span aria-hidden="true">&rarr;</span>
-      </a>
-    </div>
+  </header>
+
+  <div class="lg:inline-block hidden mt-2">
+    <button
+      id="desktop-theme-toggle"
+      class="toggle-theme"
+      aria-label="Toggle Theme"
+      title="Toggle Theme"
+      phx-hook="ThemeToggle"
+    >
+      <span class="theme-icon light hidden dark:block">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+          >
+          </path>
+        </svg>
+      </span>
+      <span class="theme-icon dark block dark:hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+          >
+          </path>
+        </svg>
+      </span>
+    </button>
   </div>
-</header>
+</div>
 <main class="px-4 py-20 sm:px-6 lg:px-8">
   <div class="mx-auto max-w-2xl">
     <.flash_group flash={@flash} />
